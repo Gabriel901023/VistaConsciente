@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#EAF4F0">
+    <title>VistaConsciente | Historial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0" rel="stylesheet">
+    <link rel="stylesheet" href="historial.css">
+    <script src="historial.js" defer></script>
+</head>
+<body>
+<div class="panel-aplicacion">
+    <aside class="barra-lateral">
+        <a class="marca-lateral" href="../inicio/inicio.html"><span class="icono-marca"><span class="material-symbols-outlined">visibility</span></span><span class="texto-marca"><small>BIENESTAR VISUAL</small><strong>VistaConsciente</strong></span></a>
+        <nav class="navegacion-lateral" aria-label="Navegación principal">
+            <a class="enlace-navegacion" href="../inicio/inicio.html"><span class="material-symbols-outlined">home</span>Inicio</a>
+            <a class="enlace-navegacion seleccionado" href="historial.html"><span class="material-symbols-outlined">history</span>Historial</a>
+            <a class="enlace-navegacion" href="../molestias/molestias.html"><span class="material-symbols-outlined">article</span>Molestias</a>
+            <a class="enlace-navegacion" href="../perfil/perfil.html"><span class="material-symbols-outlined">person</span>Perfil</a>
+        </nav>
+        <div class="usuario-lateral"><span class="avatar">LM</span><span><strong>Laura Martínez</strong><small>Perfil visual activo</small></span></div>
+        <a class="volver-bienvenida" href="../bienvenida/bienvenida.html"><span class="material-symbols-outlined">arrow_back</span>Volver a la bienvenida</a>
+    </aside>
+    <main class="contenido-principal">
+        <header class="encabezado-pagina">
+            <div><p class="sobretitulo">VISTACONSCIENTE</p><h1>Historial</h1></div>
+            <div class="estado-sesion" id="estado-sesion"><span class="material-symbols-outlined">schedule</span><span id="texto-estado-global">Sin sesión activa</span></div>
+            <div class="avatar-movil">LM</div>
+        </header>
+        <div class="selector-periodo" role="group" aria-label="Periodo del historial">
+            <button type="button" data-periodo="semana">Semana</button>
+            <button type="button" class="activo" data-periodo="dia">Día</button>
+        </div>
+        <section class="resumen-historial">
+            <article class="grafico-exposicion">
+                <div class="grafico-cabecera"><div><p class="etiqueta-clara" id="titulo-exposicion">EXPOSICIÓN DE HOY</p><strong id="total-exposicion">0h 00m</strong></div><span class="comparacion" id="comparacion-exposicion">Datos registrados</span></div>
+                <div class="barras-exposicion" id="barras-exposicion"><p class="sin-datos">Aún no hay sesiones registradas.</p></div>
+                <div class="leyenda"><span><i class="leyenda-sesion"></i>Sesión <strong id="total-sesion">0 min</strong></span><span><i class="leyenda-pausa"></i>Pausas <strong id="total-pausas">0 min</strong></span></div>
+            </article>
+            <div class="tarjetas-estadistica">
+                <article class="tarjeta-estadistica"><p class="etiqueta" id="etiqueta-estadistica-pausas">PAUSAS REGISTRADAS</p><strong id="porcentaje-meta">0%</strong><small id="detalle-meta">0 pausas</small></article>
+                <article class="tarjeta-estadistica"><p class="etiqueta">PAUSA MÁS LARGA</p><strong id="pausa-mas-larga">—</strong><small id="detalle-pausa-larga">Sin pausas registradas</small></article>
+            </div>
+        </section>
+        <section class="patron-molestias">
+            <div><p class="etiqueta">PATRÓN DE MOLESTIAS</p><h2>Mayor incidencia por hora y actividad</h2></div>
+            <div class="patron-contenido"><div class="barras-molestias" id="barras-molestias"><p class="sin-datos">Aún no hay molestias registradas.</p></div><aside id="resumen-molestias">Los registros de molestias aparecerán aquí cuando los guardes desde Inicio.</aside></div>
+        </section>
+        <section class="lista-sesiones">
+            <div class="cabecera-lista"><div><p class="etiqueta">ACTIVIDAD RECIENTE</p><h2>Sesiones registradas</h2></div><span id="cantidad-sesiones">0 sesiones</span></div>
+            <div id="lista-sesiones"><p class="sin-datos">Todavía no hay sesiones finalizadas.</p></div>
+        </section>
+    </main>
+    <nav class="navegacion-inferior" aria-label="Navegación móvil">
+        <a href="../inicio/inicio.html"><span class="material-symbols-outlined">home</span><small>Inicio</small></a>
+        <a class="seleccionado" href="historial.html"><span class="material-symbols-outlined">history</span><small>Historial</small></a>
+        <a href="../molestias/molestias.html"><span class="material-symbols-outlined">article</span><small>Molestias</small></a>
+        <a href="../perfil/perfil.html"><span class="material-symbols-outlined">person</span><small>Perfil</small></a>
+    </nav>
+</div>
+</body>
+</html>

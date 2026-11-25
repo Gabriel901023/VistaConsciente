@@ -1,0 +1,178 @@
+/* Página de seguimiento de molestias */
+.contenido-molestias { max-width: 1600px; }
+.molestias-layout {
+    display:grid;
+    grid-template-columns:minmax(0,2.1fr) minmax(280px,.9fr);
+    gap:18px;
+    align-items:start;
+}
+.panel-registros-molestias,
+.tarjeta-actividad-molestias,
+.tarjeta-prevencion-molestias {
+    background:var(--superficie);
+    border:1px solid #dcece6;
+    border-radius:24px;
+    box-shadow:0 2px 3px #294b4210;
+}
+.panel-registros-molestias { min-height:320px; padding:27px; }
+.encabezado-panel-molestias {
+    display:flex; align-items:center; justify-content:space-between; gap:15px;
+    margin-bottom:25px;
+}
+.encabezado-panel-molestias h2 { margin:7px 0 0; font:700 20px/1.25 var(--titulos); }
+.boton-nuevo-registro {
+    min-height:44px; padding:0 20px; display:inline-flex; align-items:center; justify-content:center;
+    border-radius:15px; color:#fff; background:var(--verde-oscuro);
+    text-decoration:none; font-size:12px; font-weight:700; white-space:nowrap;
+}
+.resumen-indicadores {
+    display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px;
+    margin-bottom:18px;
+}
+.resumen-indicadores > div {
+    min-width:0; padding:12px 14px; border-radius:14px; background:#eef7f3;
+    display:flex; flex-direction:column; gap:5px;
+}
+.resumen-indicadores span { color:var(--gris); font-size:10px; }
+.resumen-indicadores strong { color:var(--verde-oscuro); font:700 19px var(--titulos); overflow-wrap:anywhere; }
+.lista-registros-molestias { display:grid; gap:11px; }
+.registro-molestia {
+    padding:15px 16px; border:1px solid var(--borde); border-radius:17px;
+    background:#f8fcfa;
+}
+.registro-molestia-superior { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.registro-molestia-superior > div { display:flex; flex-direction:column; gap:3px; }
+.registro-molestia-superior strong { color:#213c35; font-size:13px; }
+.registro-molestia-superior small { color:#8b9e98; font-size:10px; }
+.intensidad-registro { padding:9px 12px; border-radius:12px; color:#254a41; background:#c7e2da; font-size:12px; font-weight:700; }
+.etiquetas-registro { display:flex; flex-wrap:wrap; gap:7px; margin-top:12px; }
+.etiquetas-registro span { padding:5px 10px; border-radius:99px; color:#355c53; background:#e0efea; font-size:10px; }
+.barra-intensidad { height:5px; margin-top:13px; overflow:hidden; border-radius:99px; background:#e4efeb; }
+.barra-intensidad span { display:block; height:100%; border-radius:inherit; background:#83b7aa; }
+.detalle-sesion-molestia { margin:9px 0 0; color:#7e928b; font-size:10px; }
+.estado-vacio {
+    min-height:210px; padding:30px 20px; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center;
+    border:1px dashed #b9d5cc; border-radius:18px; background:#f7fbf9;
+}
+.estado-vacio > .material-symbols-outlined { color:#7eaaa0; font-size:30px; }
+.estado-vacio h3 { margin:10px 0 4px; font:700 16px var(--titulos); }
+.estado-vacio p { max-width:410px; margin:0; color:var(--gris); font-size:11px; line-height:1.6; }
+.estado-vacio a { margin-top:14px; color:#315e53; font-size:11px; font-weight:700; }
+.columna-insights-molestias { display:grid; gap:16px; }
+.consejo-personalizado-molestias {
+    padding:24px; border-radius:22px; background:#deeee8;
+}
+.consejo-personalizado-molestias .etiqueta,
+.tarjeta-actividad-molestias .etiqueta,
+.tarjeta-prevencion-molestias .etiqueta { font-size:9px; letter-spacing:1.2px; }
+.icono-consejo { margin-top:17px; color:#547e73; font-size:24px; }
+.consejo-personalizado-molestias h2,
+.tarjeta-prevencion-molestias h2 { margin:9px 0 7px; font:700 18px/1.35 var(--titulos); }
+.consejo-personalizado-molestias > p:last-child,
+.tarjeta-prevencion-molestias > p:not(.etiqueta) {
+    margin:0; color:#526d66; font-size:11px; line-height:1.65;
+}
+.tarjeta-actividad-molestias,
+.tarjeta-prevencion-molestias { padding:22px; }
+.actividad-resumen { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:15px; }
+.actividad-resumen > div { padding:12px; display:flex; flex-direction:column; gap:5px; background:#eef7f3; border-radius:13px; }
+.actividad-resumen span { color:var(--gris); font-size:10px; }
+.actividad-resumen strong { font:700 21px var(--titulos); color:var(--verde-oscuro); }
+.nota-actividad { margin:11px 0 0; color:var(--gris); font-size:10px; line-height:1.5; }
+.tarjeta-prevencion-molestias { background:#f7fbf9; }
+.tarjeta-prevencion-molestias a { display:inline-flex; margin-top:13px; color:#315e53; font-size:11px; font-weight:700; }
+@media (max-width:700px) {
+    .contenido-molestias {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        padding: 24px 16px 135px;
+        overflow-x: hidden;
+    }
+    .encabezado-pagina { align-items:center; }
+    .estado-sesion {
+        display:flex;
+        align-items:center;
+        flex:0 0 auto;
+        min-height:34px;
+        max-width:150px;
+        margin-left:auto;
+        padding:8px 10px;
+        gap:10px;
+        font-size:10px;
+        white-space:nowrap;
+        box-sizing:border-box;
+    }
+    .estado-sesion .material-symbols-outlined { font-size:14px; }
+    .avatar-movil { display:none; }
+    .molestias-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        width: 100%;
+        min-width: 0;
+    }
+    .panel-registros-molestias {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        padding: 18px 15px;
+        border-radius: 21px;
+    }
+    .encabezado-panel-molestias { align-items:flex-start; margin-bottom:16px; }
+    .encabezado-panel-molestias h2 { font-size:17px; }
+    .boton-nuevo-registro { min-height:40px; padding:0 13px; border-radius:13px; font-size:10px; }
+    .resumen-indicadores { gap:7px; margin-bottom:13px; }
+    .resumen-indicadores > div { padding:9px 8px; }
+    .resumen-indicadores span { font-size:9px; }
+    .resumen-indicadores strong { font-size:16px; }
+    .registro-molestia { padding:13px; }
+    .columna-insights-molestias {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        min-width: 0;
+        gap: 12px;
+    }
+    .consejo-personalizado-molestias,
+    .tarjeta-actividad-molestias,
+    .tarjeta-prevencion-molestias { padding:18px; border-radius:19px; }
+    .consejo-personalizado-molestias h2,
+    .tarjeta-prevencion-molestias h2 { font-size:16px; }
+    .navegacion-inferior {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        align-items: stretch;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .navegacion-inferior a {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        white-space: nowrap;
+    }
+    .navegacion-inferior a small { display: block; }
+
+}
+
+
+/* Evita que las tarjetas y la navegación inferior se desordenen en pantallas estrechas. */
+@media (max-width: 400px) {
+    .contenido-molestias { padding-right: 13px; padding-left: 13px; }
+    .encabezado-panel-molestias { gap: 8px; }
+    .encabezado-panel-molestias h2 { max-width: 190px; }
+    .boton-nuevo-registro { flex: 0 0 auto; }
+    .resumen-indicadores { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .resumen-indicadores > div { overflow: hidden; }
+    .resumen-indicadores strong { font-size: 14px; }
+    .resumen-indicadores span { overflow-wrap: anywhere; }
+    .registro-molestia, .consejo-personalizado-molestias,
+    .tarjeta-actividad-molestias, .tarjeta-prevencion-molestias { min-width: 0; }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#EAF4F0">
+<title>VistaConsciente | Perfil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0" rel="stylesheet">
+<link rel="stylesheet" href="../inicio/inicio.css">
+<link rel="stylesheet" href="perfil.css">
+<script src="perfil.js" defer></script>
+</head>
+<body>
+<div class="panel-aplicacion">
+<aside class="barra-lateral">
+<a class="marca-lateral" href="../inicio/inicio.html"><span class="icono-marca"><span class="material-symbols-outlined">visibility</span></span><span class="texto-marca"><small>BIENESTAR VISUAL</small><strong>VistaConsciente</strong></span></a>
+<nav class="navegacion-lateral" aria-label="Navegación principal">
+<a class="enlace-navegacion" href="../inicio/inicio.html"><span class="material-symbols-outlined">home</span>Inicio</a>
+<a class="enlace-navegacion" href="../historial/historial.html"><span class="material-symbols-outlined">history</span>Historial</a>
+<a class="enlace-navegacion" href="../molestias/molestias.html"><span class="material-symbols-outlined">article</span>Molestias</a>
+<a class="enlace-navegacion seleccionado" href="perfil.html"><span class="material-symbols-outlined">person</span>Perfil</a>
+</nav>
+<div class="usuario-lateral"><span class="avatar">LM</span><span><strong>Laura Martínez</strong><small>Perfil visual activo</small></span></div>
+<a class="volver-bienvenida" href="../bienvenida/bienvenida.html"><span class="material-symbols-outlined">arrow_back</span>Volver a la bienvenida</a>
+</aside>
+<main class="contenido-principal contenido-perfil">
+<header class="encabezado-pagina">
+<div><p class="sobretitulo">VISTACONSCIENTE</p><h1>Perfil</h1></div>
+<div class="estado-sesion" id="estado-sesion-perfil"><span class="material-symbols-outlined">schedule</span><span id="texto-estado-perfil">Sin sesión activa</span></div>
+<div class="avatar-movil">LM</div>
+</header>
+<section class="perfil-grid">
+<article class="panel-perfil">
+<p class="etiqueta">DATOS PERSONALES</p><h2>Perfil visual</h2>
+<div class="fila-preferencia"><div><strong>Uso lentes</strong><small>Personaliza recomendaciones</small></div><label class="switch-perfil"><input type="checkbox" id="usa-lentes"><span></span></label></div>
+<div class="antecedentes-perfil"><span>Antecedentes visuales</span>
+<div class="opciones-antecedentes">
+<button type="button" data-antecedente="Miopía">Miopía</button><button type="button" data-antecedente="Astigmatismo">Astigmatismo</button><button type="button" data-antecedente="Hipermetropía">Hipermetropía</button><button type="button" data-antecedente="Ojo seco">Ojo seco</button>
+</div></div>
+</article>
+<article class="panel-perfil">
+<p class="etiqueta">PREFERENCIAS</p><h2>Configurar pausas</h2>
+<div class="control-perfil"><div><label for="frecuencia-perfil">Descansar cada</label><output id="valor-frecuencia">45 min</output></div><input type="range" id="frecuencia-perfil" min="1" max="120" value="45"></div>
+<div class="control-perfil"><div><label for="duracion-perfil">Duración de cada pausa</label><output id="valor-duracion">5 min</output></div><input type="range" id="duracion-perfil" min="1" max="60" value="5"></div>
+<div class="control-perfil"><div><label for="meta-perfil">Meta diaria</label><output id="valor-meta">5 pausas</output></div><input type="range" id="meta-perfil" min="1" max="20" value="5"></div>
+<div class="fila-preferencia carga-perfil"><div><strong>Periodo de alta carga</strong><small>Aumenta la frecuencia de consejos</small></div><label class="switch-perfil"><input type="checkbox" id="alta-carga-perfil"><span></span></label></div>
+<p class="aviso-configuracion" id="aviso-configuracion" aria-live="polite">Los cambios de preferencias se guardan en este navegador.</p>
+</article>
+</section>
+<section class="panel-cronograma">
+<div class="cabecera-cronograma"><div><p class="etiqueta">PLANIFICACIÓN</p><h2>Horario de descansos</h2><small>Organiza recordatorios visuales para tu jornada.</small></div><button type="button" id="editar-cronograma">Editar cronograma</button></div>
+<div id="lista-cronograma" class="lista-cronograma"><p class="cronograma-vacio">Aún no has añadido descansos a tu horario.</p></div>
+<p class="nota-cronograma">Este cronograma es únicamente visual: no modifica los temporizadores, las pausas ni las sesiones de la aplicación.</p>
+</section>
+<a class="volver-bienvenida-movil" href="../bienvenida/bienvenida.html"><span class="material-symbols-outlined">arrow_back</span>Volver a la bienvenida</a>
+</main>
+<nav class="navegacion-inferior" aria-label="Navegación móvil">
+<a href="../inicio/inicio.html"><span class="material-symbols-outlined">home</span><small>Inicio</small></a>
+<a href="../historial/historial.html"><span class="material-symbols-outlined">history</span><small>Historial</small></a>
+<a href="../molestias/molestias.html"><span class="material-symbols-outlined">article</span><small>Molestias</small></a>
+<a class="seleccionado" href="perfil.html"><span class="material-symbols-outlined">person</span><small>Perfil</small></a>
+</nav>
+</div>
+<div class="fondo-modal" id="modal-cronograma" hidden aria-hidden="true">
+<section class="modal-cronograma" role="dialog" aria-modal="true" aria-labelledby="titulo-cronograma">
+<button type="button" class="cerrar-cronograma" id="cerrar-cronograma" aria-label="Cerrar">×</button>
+<p class="etiqueta">PLANIFICACIÓN PERSONAL</p><h2 id="titulo-cronograma">Editar cronograma</h2>
+<p class="descripcion-cronograma">Añade hasta 6 descansos. Elige la hora y el tipo de descanso que deseas mostrar en tu horario.</p>
+<div id="editor-descansos" class="editor-descansos"></div>
+<div class="acciones-cronograma"><button type="button" id="anadir-descanso">Añadir descanso</button><button type="button" id="guardar-cronograma">Guardar horario</button></div>
+<p class="nota-cronograma">Pausa visual: 30 minutos · Descanso largo: 1 hora. Estos tiempos son etiquetas del horario y no activan descansos reales.</p>
+</section>
+</div>
+</body></html>

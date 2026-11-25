@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#EAF4F0">
+    <title>VistaConsciente | Molestias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0" rel="stylesheet">
+    <link rel="stylesheet" href="../inicio/inicio.css">
+    <link rel="stylesheet" href="molestias.css">
+    <script src="molestias.js" defer></script>
+</head>
+<body>
+<div class="panel-aplicacion">
+    <aside class="barra-lateral">
+        <a class="marca-lateral" href="../inicio/inicio.html">
+            <span class="icono-marca"><span class="material-symbols-outlined">visibility</span></span>
+            <span class="texto-marca"><small>BIENESTAR VISUAL</small><strong>VistaConsciente</strong></span>
+        </a>
+        <nav class="navegacion-lateral" aria-label="Navegación principal">
+            <a class="enlace-navegacion" href="../inicio/inicio.html"><span class="material-symbols-outlined">home</span>Inicio</a>
+            <a class="enlace-navegacion" href="../historial/historial.html"><span class="material-symbols-outlined">history</span>Historial</a>
+            <a class="enlace-navegacion seleccionado" href="molestias.html"><span class="material-symbols-outlined">article</span>Molestias</a>
+            <a class="enlace-navegacion" href="../perfil/perfil.html"><span class="material-symbols-outlined">person</span>Perfil</a>
+        </nav>
+        <div class="usuario-lateral">
+            <span class="avatar">LM</span>
+            <span><strong>Laura Martínez</strong><small>Perfil visual activo</small></span>
+        </div>
+        <a class="volver-bienvenida" href="../bienvenida/bienvenida.html"><span class="material-symbols-outlined">arrow_back</span>Volver a la bienvenida</a>
+    </aside>
+
+    <main class="contenido-principal contenido-molestias">
+        <header class="encabezado-pagina">
+            <div><p class="sobretitulo">VISTACONSCIENTE</p><h1>Molestias</h1></div>
+            <div class="estado-sesion" id="estado-sesion">
+                <span class="material-symbols-outlined">schedule</span>
+                <span id="texto-estado-global">Sin sesión activa</span>
+            </div>
+            <div class="avatar-movil" aria-label="Perfil de Laura">LM</div>
+        </header>
+
+        <section class="molestias-layout">
+            <article class="panel-registros-molestias">
+                <div class="encabezado-panel-molestias">
+                    <div><p class="etiqueta">SEGUIMIENTO VISUAL</p><h2>Historial de molestias</h2></div>
+                    <a class="boton-nuevo-registro" href="#" data-abrir-registro>Nuevo registro</a>
+                </div>
+                <div class="resumen-indicadores">
+                    <div><span>Registros</span><strong id="total-registros">0</strong></div>
+                    <div><span>Intensidad promedio</span><strong id="intensidad-promedio">—</strong></div>
+                    <div><span>Molestia frecuente</span><strong id="molestia-frecuente">—</strong></div>
+                </div>
+                <div class="lista-registros-molestias" id="lista-registros-molestias">
+                    <div class="estado-vacio"><span class="material-symbols-outlined">visibility</span><h3>Aún no hay registros</h3><p>Cuando registres una molestia desde Inicio, aquí podrás consultar su intensidad, actividad y evolución.</p><a href="#" data-abrir-registro>Registrar primera molestia</a></div>
+                </div>
+            </article>
+
+            <aside class="columna-insights-molestias">
+                <article class="consejo-personalizado-molestias">
+                    <p class="etiqueta">CONSEJO PERSONALIZADO</p>
+                    <span class="material-symbols-outlined icono-consejo">lightbulb</span>
+                    <h2 id="titulo-consejo-molestia">Cuida tu bienestar visual</h2>
+                    <p id="texto-consejo-molestia">Al registrar tus molestias, podrás recibir una recomendación relacionada con los síntomas que aparecen con mayor frecuencia.</p>
+                </article>
+                <article class="tarjeta-actividad-molestias">
+                    <p class="etiqueta">ACTIVIDAD RELACIONADA</p>
+                    <div class="actividad-resumen">
+                        <div><span>Estudio</span><strong id="total-estudio">0</strong></div>
+                        <div><span>Trabajo</span><strong id="total-trabajo">0</strong></div>
+                    </div>
+                    <p class="nota-actividad" id="nota-actividad">Aquí verás en qué actividad se registran más molestias.</p>
+                </article>
+                <article class="tarjeta-prevencion-molestias">
+                    <p class="etiqueta">HÁBITO PREVENTIVO</p>
+                    <h2 id="titulo-habito">Regla 20-20-20</h2>
+                    <p id="texto-habito">Cada 20 minutos, mira un objeto a unos 6 metros durante 20 segundos.</p>
+                    <a href="../inicio/inicio.html">Ver recomendaciones</a>
+                </article>
+            </aside>
+        </section>
+    </main>
+
+    <nav class="navegacion-inferior" aria-label="Navegación móvil">
+        <a href="../inicio/inicio.html"><span class="material-symbols-outlined">home</span><small>Inicio</small></a>
+        <a href="../historial/historial.html"><span class="material-symbols-outlined">history</span><small>Historial</small></a>
+        <a class="seleccionado" href="molestias.html"><span class="material-symbols-outlined">article</span><small>Molestias</small></a>
+        <a href="../perfil/perfil.html"><span class="material-symbols-outlined">person</span><small>Perfil</small></a>
+    </nav>
+</div>
+
+
+    <div class="fondo-modal fondo-modal-molestia" id="modal-registrar-molestia" aria-hidden="true" hidden>
+        <section class="modal-molestia" role="dialog" aria-modal="true" aria-labelledby="titulo-modal-molestia">
+            <p class="marca-modal-molestia">VISTACONSCIENTE</p>
+            <h2 id="titulo-modal-molestia">¿Cómo están tus ojos?</h2>
+            <p class="subtitulo-modal-molestia">SELECCIONA TUS MOLESTIAS</p>
+            <div class="opciones-molestia" id="opciones-molestia" role="group" aria-label="Molestias">
+                <button type="button" class="opcion-molestia" aria-pressed="false">Ardor</button>
+                <button type="button" class="opcion-molestia" aria-pressed="false">Sequedad</button>
+                <button type="button" class="opcion-molestia" aria-pressed="false">Fatiga</button>
+                <button type="button" class="opcion-molestia" aria-pressed="false">Visión borrosa</button>
+                <button type="button" class="opcion-molestia" aria-pressed="false">Dolor de cabeza</button>
+            </div>
+            <div class="intensidad-molestia">
+                <div class="encabezado-intensidad"><label for="intensidad-molestia">Intensidad de molestia</label><output id="valor-intensidad-molestia" for="intensidad-molestia">3 / 10</output></div>
+                <input type="range" id="intensidad-molestia" min="1" max="10" value="3" step="1">
+                <p>Se vinculará automáticamente con <strong id="actividad-molestia">Estudio</strong> y la hora actual.</p>
+            </div>
+            <small class="error-molestia" id="error-molestia" role="alert"></small>
+            <div class="acciones-modal-molestia">
+                <button type="button" class="boton-cancelar-molestia" id="cancelar-modal-molestia">Cancelar</button>
+                <button type="button" class="boton-guardar-molestia" id="guardar-modal-molestia" disabled>Guardar registro</button>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

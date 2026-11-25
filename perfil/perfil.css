@@ -1,0 +1,79 @@
+/* Perfil */
+.contenido-perfil{max-width:1600px}
+.perfil-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+.panel-perfil,.panel-cronograma{background:#f6fbf8;border:1px solid #deece6;border-radius:28px;box-shadow:0 2px 3px #294b4210;padding:28px}
+.panel-perfil h2,.panel-cronograma h2{margin:8px 0 22px;font:700 20px var(--titulos)}
+.fila-preferencia{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:6px 0 20px;border-bottom:1px solid #9cc9bb}
+.fila-preferencia strong{display:block;font-size:13px;font-weight:600}
+.fila-preferencia small{display:block;margin-top:4px;color:var(--gris);font-size:11px}
+.switch-perfil{position:relative;display:inline-flex;width:48px;height:27px;flex-shrink:0}
+.switch-perfil input{opacity:0;width:0;height:0}
+.switch-perfil span{position:absolute;inset:0;border-radius:99px;background:#d1e2dc;cursor:pointer;transition:.2s}
+.switch-perfil span:before{content:"";position:absolute;width:19px;height:19px;left:4px;top:4px;border-radius:50%;background:white;transition:.2s}
+.switch-perfil input:checked+span{background:#7eb4a8}
+.switch-perfil input:checked+span:before{transform:translateX(21px)}
+.antecedentes-perfil{padding-top:22px}
+.antecedentes-perfil>span{font-size:11px}
+.opciones-antecedentes{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.opciones-antecedentes button{padding:9px 14px;border:1px solid #8abdaf;border-radius:99px;background:transparent;color:#31564d;font:inherit;font-size:11px;cursor:pointer}
+.opciones-antecedentes button.seleccionado{background:#2d5049;color:white;border-color:#2d5049}
+.control-perfil{margin:17px 0 22px}
+.control-perfil>div{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.control-perfil label{font-size:11px}
+.control-perfil output{padding:5px 10px;border-radius:9px;background:#dfefea;color:#31564d;font-size:10px}
+.control-perfil input{width:100%;accent-color:#31564d}
+.carga-perfil{margin-top:26px;padding:17px 16px;border:0;border-radius:16px;background:#dfefea}
+.aviso-configuracion{margin:14px 0 0;color:#80958e;font-size:10px}
+.panel-cronograma{margin-top:18px}
+.cabecera-cronograma{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:20px}
+.cabecera-cronograma h2{margin-bottom:5px}
+.cabecera-cronograma small{color:var(--gris);font-size:11px}
+.cabecera-cronograma>button{border:0;background:transparent;color:#d84c65;font:inherit;font-size:12px;cursor:pointer}
+.lista-cronograma{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.item-cronograma{display:flex;align-items:center;gap:11px;padding:16px;border-radius:16px;background:#dfefea;color:#263f39;font-size:12px}
+.item-cronograma .material-symbols-outlined{font-size:18px;color:#426b60}
+.item-cronograma strong{font-weight:600}
+.cronograma-vacio{grid-column:1/-1;margin:0;padding:20px;border:1px dashed #b8d3ca;border-radius:15px;color:var(--gris);font-size:12px;text-align:center}
+.nota-cronograma{margin:14px 0 0;color:#80958e;font-size:10px;line-height:1.5}
+.modal-cronograma{position:relative;width:min(92vw,560px);max-height:88vh;overflow:auto;padding:30px;background:#f8fcfa;border-radius:24px;box-shadow:0 20px 60px #163a3040}
+.modal-cronograma h2{margin:7px 0;font:700 22px var(--titulos)}
+.descripcion-cronograma{color:var(--gris);font-size:12px;line-height:1.6}
+.cerrar-cronograma{position:absolute;right:18px;top:14px;border:0;background:transparent;font-size:28px;color:#46645c;cursor:pointer}
+.editor-descansos{display:grid;gap:10px;margin:18px 0}
+.fila-editor-descanso{display:grid;grid-template-columns:1fr 1.3fr auto;gap:9px;align-items:center;padding:11px;background:#eaf4f0;border-radius:13px}
+.fila-editor-descanso input,.fila-editor-descanso select{min-width:0;width:100%;padding:9px;border:1px solid #c5ddd4;border-radius:9px;background:#fff;color:#24453d;font:inherit;font-size:11px}
+.eliminar-descanso{width:34px;height:34px;border:0;border-radius:9px;background:#f8e5e8;color:#b63c52;font-size:19px;cursor:pointer}
+.acciones-cronograma{display:flex;justify-content:flex-end;gap:9px;flex-wrap:wrap}
+.acciones-cronograma button{min-height:40px;padding:0 16px;border:1px solid #8abdaf;border-radius:12px;background:transparent;color:#31564d;font:inherit;font-size:11px;cursor:pointer}
+.acciones-cronograma #guardar-cronograma{background:#2d5049;color:#fff;border-color:#2d5049}
+#anadir-descanso:disabled{opacity:.4;cursor:not-allowed}
+@media(max-width:800px){.perfil-grid{grid-template-columns:1fr;gap:13px}.panel-perfil,.panel-cronograma{padding:20px;border-radius:22px}.panel-cronograma{margin-top:13px}.lista-cronograma{grid-template-columns:1fr}.cabecera-cronograma{align-items:flex-start}.cabecera-cronograma>button{white-space:nowrap}.contenido-perfil{padding-bottom:90px}.modal-cronograma{padding:25px 18px}.fila-editor-descanso{grid-template-columns:1fr 1fr}.eliminar-descanso{grid-column:2;justify-self:end}}
+
+
+/* Acceso a bienvenida dentro del contenido del Perfil en móviles. */
+.volver-bienvenida-movil {
+    display: none;
+}
+@media (max-width: 800px) {
+    .volver-bienvenida-movil {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        width: 100%;
+        min-height: 46px;
+        box-sizing: border-box;
+        margin: 14px 0 12px;
+        padding: 10px 16px;
+        border: 1px solid #c8ddd5;
+        border-radius: 15px;
+        background: #f6fbf8;
+        color: #31564d;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .volver-bienvenida-movil .material-symbols-outlined {
+        font-size: 18px;
+    }
+}
